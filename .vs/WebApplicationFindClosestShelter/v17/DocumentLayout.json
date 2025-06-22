@@ -1,0 +1,445 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{880ABB8B-1855-4423-ACE7-D6F6E03E5107}|Dal\\Dal.csproj|c:\\users\\tsofn\\desktop\\tsufit\\programming\\secondyear\\c#\\semesterb\\webapplicationfindclosestshelter\\dal\\data\\dalopinion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{880ABB8B-1855-4423-ACE7-D6F6E03E5107}|Dal\\Dal.csproj|solutionrelative:dal\\data\\dalopinion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|c:\\users\\tsofn\\desktop\\tsufit\\programming\\secondyear\\c#\\semesterb\\webapplicationfindclosestshelter\\core\\mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|solutionrelative:core\\mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{880ABB8B-1855-4423-ACE7-D6F6E03E5107}|Dal\\Dal.csproj|c:\\users\\tsofn\\desktop\\tsufit\\programming\\secondyear\\c#\\semesterb\\webapplicationfindclosestshelter\\dal\\data\\daladdress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{880ABB8B-1855-4423-ACE7-D6F6E03E5107}|Dal\\Dal.csproj|solutionrelative:dal\\data\\daladdress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE3BCA6E-ACDD-44E5-A56D-C81F0A23D0F9}|WebApplicationFindClosestShelter\\WebApplicationFindClosestShelter.csproj|c:\\users\\tsofn\\desktop\\tsufit\\programming\\secondyear\\c#\\semesterb\\webapplicationfindclosestshelter\\webapplicationfindclosestshelter\\controllers\\addresscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE3BCA6E-ACDD-44E5-A56D-C81F0A23D0F9}|WebApplicationFindClosestShelter\\WebApplicationFindClosestShelter.csproj|solutionrelative:webapplicationfindclosestshelter\\controllers\\addresscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2347AC64-DF61-474C-B2D3-40C525E20FC8}|Bll_Services\\Bll_Services.csproj|c:\\users\\tsofn\\desktop\\tsufit\\programming\\secondyear\\c#\\semesterb\\webapplicationfindclosestshelter\\bll_services\\blladdress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2347AC64-DF61-474C-B2D3-40C525E20FC8}|Bll_Services\\Bll_Services.csproj|solutionrelative:bll_services\\blladdress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|c:\\users\\tsofn\\desktop\\tsufit\\programming\\secondyear\\c#\\semesterb\\webapplicationfindclosestshelter\\core\\interfaces\\repositories\\idal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|solutionrelative:core\\interfaces\\repositories\\idal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|c:\\users\\tsofn\\desktop\\tsufit\\programming\\secondyear\\c#\\semesterb\\webapplicationfindclosestshelter\\core\\interfaces\\repositories\\idaladdress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|solutionrelative:core\\interfaces\\repositories\\idaladdress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{880ABB8B-1855-4423-ACE7-D6F6E03E5107}|Dal\\Dal.csproj|c:\\users\\tsofn\\desktop\\tsufit\\programming\\secondyear\\c#\\semesterb\\webapplicationfindclosestshelter\\dal\\shelteredplacesdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{880ABB8B-1855-4423-ACE7-D6F6E03E5107}|Dal\\Dal.csproj|solutionrelative:dal\\shelteredplacesdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|c:\\users\\tsofn\\desktop\\tsufit\\programming\\secondyear\\c#\\semesterb\\webapplicationfindclosestshelter\\core\\models\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|solutionrelative:core\\models\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|c:\\users\\tsofn\\desktop\\tsufit\\programming\\secondyear\\c#\\semesterb\\webapplicationfindclosestshelter\\core\\interfaces\\services\\iblladdress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|solutionrelative:core\\interfaces\\services\\iblladdress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE3BCA6E-ACDD-44E5-A56D-C81F0A23D0F9}|WebApplicationFindClosestShelter\\WebApplicationFindClosestShelter.csproj|c:\\users\\tsofn\\desktop\\tsufit\\programming\\secondyear\\c#\\semesterb\\webapplicationfindclosestshelter\\webapplicationfindclosestshelter\\webapplicationfindclosestshelter.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{EE3BCA6E-ACDD-44E5-A56D-C81F0A23D0F9}|WebApplicationFindClosestShelter\\WebApplicationFindClosestShelter.csproj|solutionrelative:webapplicationfindclosestshelter\\webapplicationfindclosestshelter.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Dal\\Migrations\\20250622225650_m4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Dal\\Migrations\\20250622225650_m4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|c:\\users\\tsofn\\desktop\\tsufit\\programming\\secondyear\\c#\\semesterb\\webapplicationfindclosestshelter\\core\\resources_dto\\opiniondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|solutionrelative:core\\resources_dto\\opiniondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|c:\\users\\tsofn\\desktop\\tsufit\\programming\\secondyear\\c#\\semesterb\\webapplicationfindclosestshelter\\core\\interfaces\\services\\ibllopinion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|solutionrelative:core\\interfaces\\services\\ibllopinion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|c:\\users\\tsofn\\desktop\\tsufit\\programming\\secondyear\\c#\\semesterb\\webapplicationfindclosestshelter\\core\\models\\opinion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|solutionrelative:core\\models\\opinion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|c:\\users\\tsofn\\desktop\\tsufit\\programming\\secondyear\\c#\\semesterb\\webapplicationfindclosestshelter\\core\\models\\shelter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|solutionrelative:core\\models\\shelter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|c:\\users\\tsofn\\desktop\\tsufit\\programming\\secondyear\\c#\\semesterb\\webapplicationfindclosestshelter\\core\\resources_dto\\addressdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|solutionrelative:core\\resources_dto\\addressdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|c:\\users\\tsofn\\desktop\\tsufit\\programming\\secondyear\\c#\\semesterb\\webapplicationfindclosestshelter\\core\\models\\sheltertypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|solutionrelative:core\\models\\sheltertypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|c:\\users\\tsofn\\desktop\\tsufit\\programming\\secondyear\\c#\\semesterb\\webapplicationfindclosestshelter\\core\\models\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|solutionrelative:core\\models\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Dal\\Migrations\\20250622222104_m.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Dal\\Migrations\\20250622222104_m.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2347AC64-DF61-474C-B2D3-40C525E20FC8}|Bll_Services\\Bll_Services.csproj|c:\\users\\tsofn\\desktop\\tsufit\\programming\\secondyear\\c#\\semesterb\\webapplicationfindclosestshelter\\bll_services\\bllshelter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2347AC64-DF61-474C-B2D3-40C525E20FC8}|Bll_Services\\Bll_Services.csproj|solutionrelative:bll_services\\bllshelter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{880ABB8B-1855-4423-ACE7-D6F6E03E5107}|Dal\\Dal.csproj|c:\\users\\tsofn\\desktop\\tsufit\\programming\\secondyear\\c#\\semesterb\\webapplicationfindclosestshelter\\dal\\data\\dalshelter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{880ABB8B-1855-4423-ACE7-D6F6E03E5107}|Dal\\Dal.csproj|solutionrelative:dal\\data\\dalshelter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|c:\\users\\tsofn\\desktop\\tsufit\\programming\\secondyear\\c#\\semesterb\\webapplicationfindclosestshelter\\core\\interfaces\\repositories\\idalshelter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|solutionrelative:core\\interfaces\\repositories\\idalshelter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|c:\\users\\tsofn\\desktop\\tsufit\\programming\\secondyear\\c#\\semesterb\\webapplicationfindclosestshelter\\core\\resources_dto\\shelterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EF74E25-D22A-4331-983D-9995B81B5473}|Core\\Core.csproj|solutionrelative:core\\resources_dto\\shelterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Dal\\Migrations\\20250622221030_m.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Dal\\Migrations\\20250622221030_m.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Mapping\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "Core\\Mapping\\MappingProfile.cs",
+              "ToolTip": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Mapping\\MappingProfile.cs",
+              "RelativeToolTip": "Core\\Mapping\\MappingProfile.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAgwDkAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T21:49:43.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Opinion.cs",
+              "DocumentMoniker": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Models\\Opinion.cs",
+              "RelativeDocumentMoniker": "Core\\Models\\Opinion.cs",
+              "ToolTip": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Models\\Opinion.cs",
+              "RelativeToolTip": "Core\\Models\\Opinion.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAywA4AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T21:48:45.543Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AddressController.cs",
+              "DocumentMoniker": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\WebApplicationFindClosestShelter\\Controllers\\AddressController.cs",
+              "RelativeDocumentMoniker": "WebApplicationFindClosestShelter\\Controllers\\AddressController.cs",
+              "ToolTip": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\WebApplicationFindClosestShelter\\Controllers\\AddressController.cs",
+              "RelativeToolTip": "WebApplicationFindClosestShelter\\Controllers\\AddressController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAwCkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T22:24:27.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BllAddress.cs",
+              "DocumentMoniker": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Bll_Services\\BllAddress.cs",
+              "RelativeDocumentMoniker": "Bll_Services\\BllAddress.cs",
+              "ToolTip": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Bll_Services\\BllAddress.cs",
+              "RelativeToolTip": "Bll_Services\\BllAddress.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAA3wDkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T21:45:17.138Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IBllAddress.cs",
+              "DocumentMoniker": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Interfaces\\Services\\IBllAddress.cs",
+              "RelativeDocumentMoniker": "Core\\Interfaces\\Services\\IBllAddress.cs",
+              "ToolTip": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Interfaces\\Services\\IBllAddress.cs",
+              "RelativeToolTip": "Core\\Interfaces\\Services\\IBllAddress.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAMBBwBAAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T22:59:48.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DalAddress.cs",
+              "DocumentMoniker": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Dal\\data\\DalAddress.cs",
+              "RelativeDocumentMoniker": "Dal\\data\\DalAddress.cs",
+              "ToolTip": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Dal\\data\\DalAddress.cs",
+              "RelativeToolTip": "Dal\\data\\DalAddress.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAgwDMAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T21:45:32.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Address.cs",
+              "DocumentMoniker": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Models\\Address.cs",
+              "RelativeDocumentMoniker": "Core\\Models\\Address.cs",
+              "ToolTip": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Models\\Address.cs",
+              "RelativeToolTip": "Core\\Models\\Address.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAywA8AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T22:34:51.598Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DalOpinion.cs",
+              "DocumentMoniker": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Dal\\data\\DalOpinion.cs",
+              "RelativeDocumentMoniker": "Dal\\data\\DalOpinion.cs",
+              "ToolTip": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Dal\\data\\DalOpinion.cs",
+              "RelativeToolTip": "Dal\\data\\DalOpinion.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T21:48:16.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IDalAddress.cs",
+              "DocumentMoniker": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Interfaces\\Repositories\\IDalAddress.cs",
+              "RelativeDocumentMoniker": "Core\\Interfaces\\Repositories\\IDalAddress.cs",
+              "ToolTip": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Interfaces\\Repositories\\IDalAddress.cs",
+              "RelativeToolTip": "Core\\Interfaces\\Repositories\\IDalAddress.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAA3wA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T23:09:50.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IDal.cs",
+              "DocumentMoniker": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Interfaces\\Repositories\\IDal.cs",
+              "RelativeDocumentMoniker": "Core\\Interfaces\\Repositories\\IDal.cs",
+              "ToolTip": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Interfaces\\Repositories\\IDal.cs",
+              "RelativeToolTip": "Core\\Interfaces\\Repositories\\IDal.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAxwBEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T23:09:59.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ShelteredPlacesDb.cs",
+              "DocumentMoniker": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Dal\\ShelteredPlacesDb.cs",
+              "RelativeDocumentMoniker": "Dal\\ShelteredPlacesDb.cs",
+              "ToolTip": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Dal\\ShelteredPlacesDb.cs",
+              "RelativeToolTip": "Dal\\ShelteredPlacesDb.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAIBBwBIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T22:10:13.155Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Shelter.cs",
+              "DocumentMoniker": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Models\\Shelter.cs",
+              "RelativeDocumentMoniker": "Core\\Models\\Shelter.cs",
+              "ToolTip": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Models\\Shelter.cs",
+              "RelativeToolTip": "Core\\Models\\Shelter.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA4AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T22:15:18.759Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IBllOpinion.cs",
+              "DocumentMoniker": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Interfaces\\Services\\IBllOpinion.cs",
+              "RelativeDocumentMoniker": "Core\\Interfaces\\Services\\IBllOpinion.cs",
+              "ToolTip": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Interfaces\\Services\\IBllOpinion.cs",
+              "RelativeToolTip": "Core\\Interfaces\\Services\\IBllOpinion.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAUwA4AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T22:56:08.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "WebApplicationFindClosestShelter",
+              "DocumentMoniker": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\WebApplicationFindClosestShelter\\WebApplicationFindClosestShelter.csproj",
+              "RelativeDocumentMoniker": "WebApplicationFindClosestShelter\\WebApplicationFindClosestShelter.csproj",
+              "ToolTip": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\WebApplicationFindClosestShelter\\WebApplicationFindClosestShelter.csproj",
+              "RelativeToolTip": "WebApplicationFindClosestShelter\\WebApplicationFindClosestShelter.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-22T22:57:06.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "OpinionDTO.cs",
+              "DocumentMoniker": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Resources_DTO\\OpinionDTO.cs",
+              "RelativeDocumentMoniker": "Core\\Resources_DTO\\OpinionDTO.cs",
+              "ToolTip": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Resources_DTO\\OpinionDTO.cs",
+              "RelativeToolTip": "Core\\Resources_DTO\\OpinionDTO.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA6wA4AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T22:56:16.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "20250622225650_m4.cs",
+              "DocumentMoniker": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Dal\\Migrations\\20250622225650_m4.cs",
+              "RelativeDocumentMoniker": "Dal\\Migrations\\20250622225650_m4.cs",
+              "ToolTip": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Dal\\Migrations\\20250622225650_m4.cs",
+              "RelativeToolTip": "Dal\\Migrations\\20250622225650_m4.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T22:56:50.547Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Location.cs",
+              "DocumentMoniker": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Models\\Location.cs",
+              "RelativeDocumentMoniker": "Core\\Models\\Location.cs",
+              "ToolTip": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Models\\Location.cs",
+              "RelativeToolTip": "Core\\Models\\Location.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T22:34:47.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AddressDTO.cs",
+              "DocumentMoniker": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Resources_DTO\\AddressDTO.cs",
+              "RelativeDocumentMoniker": "Core\\Resources_DTO\\AddressDTO.cs",
+              "ToolTip": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Resources_DTO\\AddressDTO.cs",
+              "RelativeToolTip": "Core\\Resources_DTO\\AddressDTO.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAywA8AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T22:36:19.737Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ShelterTypes.cs",
+              "DocumentMoniker": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Models\\ShelterTypes.cs",
+              "RelativeDocumentMoniker": "Core\\Models\\ShelterTypes.cs",
+              "ToolTip": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Models\\ShelterTypes.cs",
+              "RelativeToolTip": "Core\\Models\\ShelterTypes.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T22:21:38.609Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "20250622221030_m.cs",
+              "DocumentMoniker": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Dal\\Migrations\\20250622221030_m.cs",
+              "RelativeDocumentMoniker": "Dal\\Migrations\\20250622221030_m.cs",
+              "ToolTip": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Dal\\Migrations\\20250622221030_m.cs",
+              "RelativeToolTip": "Dal\\Migrations\\20250622221030_m.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T22:10:30.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "DalShelter.cs",
+              "DocumentMoniker": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Dal\\data\\DalShelter.cs",
+              "RelativeDocumentMoniker": "Dal\\data\\DalShelter.cs",
+              "ToolTip": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Dal\\data\\DalShelter.cs",
+              "RelativeToolTip": "Dal\\data\\DalShelter.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA0wA4AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T22:19:04.091Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IDalShelter.cs",
+              "DocumentMoniker": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Interfaces\\Repositories\\IDalShelter.cs",
+              "RelativeDocumentMoniker": "Core\\Interfaces\\Repositories\\IDalShelter.cs",
+              "ToolTip": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Interfaces\\Repositories\\IDalShelter.cs",
+              "RelativeToolTip": "Core\\Interfaces\\Repositories\\IDalShelter.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T22:20:05.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "20250622222104_m.cs",
+              "DocumentMoniker": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Dal\\Migrations\\20250622222104_m.cs",
+              "RelativeDocumentMoniker": "Dal\\Migrations\\20250622222104_m.cs",
+              "ToolTip": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Dal\\Migrations\\20250622222104_m.cs",
+              "RelativeToolTip": "Dal\\Migrations\\20250622222104_m.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T22:21:04.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "BllShelter.cs",
+              "DocumentMoniker": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Bll_Services\\BllShelter.cs",
+              "RelativeDocumentMoniker": "Bll_Services\\BllShelter.cs",
+              "ToolTip": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Bll_Services\\BllShelter.cs",
+              "RelativeToolTip": "Bll_Services\\BllShelter.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAA0wCoAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T21:43:05.182Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ShelterDTO.cs",
+              "DocumentMoniker": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Resources_DTO\\ShelterDTO.cs",
+              "RelativeDocumentMoniker": "Core\\Resources_DTO\\ShelterDTO.cs",
+              "ToolTip": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\Core\\Resources_DTO\\ShelterDTO.cs",
+              "RelativeToolTip": "Core\\Resources_DTO\\ShelterDTO.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAywA0AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T21:43:02.051Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

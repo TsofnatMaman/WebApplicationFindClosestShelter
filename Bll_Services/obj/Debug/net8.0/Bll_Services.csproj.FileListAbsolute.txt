@@ -1,0 +1,15 @@
+C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplicationFindClosestShelter\Bll_Services\bin\Debug\net8.0\Bll_Services.deps.json
+C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplicationFindClosestShelter\Bll_Services\bin\Debug\net8.0\Bll_Services.dll
+C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplicationFindClosestShelter\Bll_Services\bin\Debug\net8.0\Bll_Services.pdb
+C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplicationFindClosestShelter\Bll_Services\obj\Debug\net8.0\Bll_Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplicationFindClosestShelter\Bll_Services\obj\Debug\net8.0\Bll_Services.AssemblyInfoInputs.cache
+C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplicationFindClosestShelter\Bll_Services\obj\Debug\net8.0\Bll_Services.AssemblyInfo.cs
+C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplicationFindClosestShelter\Bll_Services\obj\Debug\net8.0\Bll_Services.csproj.CoreCompileInputs.cache
+C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplicationFindClosestShelter\Bll_Services\obj\Debug\net8.0\Bll_Services.dll
+C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplicationFindClosestShelter\Bll_Services\obj\Debug\net8.0\refint\Bll_Services.dll
+C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplicationFindClosestShelter\Bll_Services\obj\Debug\net8.0\Bll_Services.pdb
+C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplicationFindClosestShelter\Bll_Services\obj\Debug\net8.0\ref\Bll_Services.dll
+C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplicationFindClosestShelter\Bll_Services\obj\Debug\net8.0\Bll_Services.csproj.AssemblyReference.cache
+C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplicationFindClosestShelter\Bll_Services\bin\Debug\net8.0\Core.dll
+C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplicationFindClosestShelter\Bll_Services\bin\Debug\net8.0\Core.pdb
+C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplicationFindClosestShelter\Bll_Services\obj\Debug\net8.0\Bll_Serv.E59EB5EE.Up2Date

@@ -1,0 +1,6 @@
+@WebApplicationFindClosestShelter_HostAddress = http://localhost:5074
+
+GET {{WebApplicationFindClosestShelter_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

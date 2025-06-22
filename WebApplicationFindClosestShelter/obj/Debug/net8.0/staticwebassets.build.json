@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "nnQs5VlYjbpDbYWuW/CJ2gZB5Chlg6GOzfdUT7bkMdc=",
+  "Source": "WebApplicationFindClosestShelter",
+  "BasePath": "_content/WebApplicationFindClosestShelter",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
