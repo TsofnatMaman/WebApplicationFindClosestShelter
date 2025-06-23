@@ -92,6 +92,26 @@
     ]
   },
   {
+    "ContainingType": "WebApplicationFindClosestShelter.Controllers.AddressController",
+    "Method": "GetLastMonthAddedAddressAsync",
+    "RelativePath": "api/Address/lastMonth",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Core.Models.Address, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "WebApplicationFindClosestShelter.Controllers.OpinionController",
     "Method": "GetAll",
     "RelativePath": "api/Opinion",
@@ -212,9 +232,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "address",
-        "Type": "Core.Models.AddressDTO",
-        "IsRequired": true
+        "Name": "addressCode",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [

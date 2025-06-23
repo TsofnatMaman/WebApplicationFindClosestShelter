@@ -12,7 +12,7 @@ namespace Core.Interfaces.Services
     {
         Task<List<OpinionDTO>> GetAllAsync();
         Task<OpinionDTO> GetByIdAsync(int id);
-        Task<List<OpinionDTO>> GetByAddressAsync(AddressDTO address);
+        Task<List<OpinionDTO>> GetByAddressAsync(int addressCode);
         Task AddAsync(OpinionDTO opinion);
         Task UpdateAsync(OpinionDTO opinion);
         Task DeleteAsync(int id);

@@ -23,6 +23,12 @@ namespace WebApplicationFindClosestShelter.Controllers
             return await bllAddress.GetClosestAsync(location);
         }
 
+        [HttpGet("lastMonth")]
+        public async Task<List<Address>> GetLastMonthAddedAddressAsync()
+        {
+            return await bllAddress.GetLastMonthAddedAddressAsync();
+        }
+
         [HttpPost]
         public async Task AddAsync(AddressDTO address)
         {

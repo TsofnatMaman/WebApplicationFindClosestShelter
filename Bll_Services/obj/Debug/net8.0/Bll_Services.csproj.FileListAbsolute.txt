@@ -13,3 +13,4 @@ C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplication
 C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplicationFindClosestShelter\Bll_Services\bin\Debug\net8.0\Core.dll
 C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplicationFindClosestShelter\Bll_Services\bin\Debug\net8.0\Core.pdb
 C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplicationFindClosestShelter\Bll_Services\obj\Debug\net8.0\Bll_Serv.E59EB5EE.Up2Date
+C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplicationFindClosestShelter\Bll_Services\obj\Debug\net8.0\Bll_Services.sourcelink.json

@@ -79,3 +79,4 @@ C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplication
 C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplicationFindClosestShelter\WebApplicationFindClosestShelter\obj\Debug\net8.0\WebApplicationFindClosestShelter.genruntimeconfig.cache
 C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplicationFindClosestShelter\WebApplicationFindClosestShelter\obj\Debug\net8.0\ref\WebApplicationFindClosestShelter.dll
 C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplicationFindClosestShelter\WebApplicationFindClosestShelter\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplicationFindClosestShelter\WebApplicationFindClosestShelter\obj\Debug\net8.0\WebApplicationFindClosestShelter.sourcelink.json

@@ -23,9 +23,9 @@ namespace WebApplicationFindClosestShelter.Controllers
         }
 
         [HttpGet("byAddress")]
-        public async Task<List<OpinionDTO>> GetByAddressAsync(AddressDTO address)
+        public async Task<List<OpinionDTO>> GetByAddressAsync(int addressCode)
         {
-            return await bllOpinion.GetByAddressAsync(address);
+            return await bllOpinion.GetByAddressAsync(addressCode);
         }
 
         [HttpGet("{id}")]

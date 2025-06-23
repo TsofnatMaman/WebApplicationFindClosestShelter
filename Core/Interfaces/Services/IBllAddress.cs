@@ -15,5 +15,7 @@ namespace Core.Interfaces.Services
         Task RemoveAsync(int idAddress);
         Task UpdateAsync(AddressDTO address);
         Task<List<AddressDTO>> GetClosestAsync(string location);
+        Task<List<Address>> GetLastMonthAddedAddressAsync();
+
     }
 }

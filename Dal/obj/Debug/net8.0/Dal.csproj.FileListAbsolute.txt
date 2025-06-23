@@ -15,3 +15,4 @@ C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplication
 C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplicationFindClosestShelter\Dal\obj\Debug\net8.0\Dal.pdb
 C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplicationFindClosestShelter\Dal\obj\Debug\net8.0\Dal.genruntimeconfig.cache
 C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplicationFindClosestShelter\Dal\obj\Debug\net8.0\ref\Dal.dll
+C:\Users\tsofn\Desktop\Tsufit\programming\secondYear\C#\semesterB\WebApplicationFindClosestShelter\Dal\obj\Debug\net8.0\Dal.sourcelink.json

@@ -27,11 +27,10 @@ namespace Bll_Services
             return _mapper.Map<List<OpinionDTO>>(await _dalOpinion.GetAllAsync());
         }
 
-        public async Task<List<OpinionDTO>> GetByAddressAsync(AddressDTO address)
+        public async Task<List<OpinionDTO>> GetByAddressAsync(int addressCode)
         {
-            Address a = _mapper.Map<Address>(address);
             var all = await _dalOpinion.GetAllAsync();
-            return _mapper.Map<List<OpinionDTO>>(all.Where(x => x.Address == a));
+            return _mapper.Map<List<OpinionDTO>>(all.Where(x => x.Address.Code == addressCode));
         }
 
         public async Task<OpinionDTO> GetByIdAsync(int id)

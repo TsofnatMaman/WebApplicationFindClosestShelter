@@ -35,8 +35,16 @@ namespace Bll_Services
             List<Address> all = await _dalAddress.GetAllAsync();
 
             return _mapper.Map<List<AddressDTO>>(all
+                .Take(10)
                 .OrderBy(a => CloseLevel(_mapper.Map<Location>(location), a.Location))
                 .ToList());
+        }
+
+        public async Task<List<Address>> GetLastMonthAddedAddressAsync()
+        {
+            var l = await _dalAddress.GetAllAsync();
+            DateTime lastMonth = DateTime.Today.AddMonths(-1);
+            return l.Where(a => a.AddedSystem >= lastMonth).ToList();
         }
 
         public async Task AddAsync(AddressDTO address)
