@@ -32,11 +32,12 @@ namespace Bll_Services
 
         public async Task<List<AddressDTO>> GetClosestAsync(string location)
         {
-            List<Address> all = await _dalAddress.GetAllAsync();
+            List<AddressDTO> all = _mapper.Map<List<AddressDTO>>(await _dalAddress.GetAllAsync());
 
-            return _mapper.Map<List<AddressDTO>>(all
+            return (all
+                .Select(a=> { a.Distance = CloseLevel(_mapper.Map<Location>(location), _mapper.Map<Location>(a.Location)); return a; })
+                .OrderBy(a => a.Distance)
                 .Take(10)
-                .OrderBy(a => CloseLevel(_mapper.Map<Location>(location), a.Location))
                 .ToList());
         }
 

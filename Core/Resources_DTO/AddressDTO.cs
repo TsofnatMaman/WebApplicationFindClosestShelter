@@ -21,6 +21,7 @@ namespace Core.Models
         public int Capacity { get; set; }
         public int CurrentNumberPeople { get; set; }
         public DateTime AddedSystem { get; private set; }
+        public virtual double Distance { get; set; }
 
         public AddressDTO() {
             AddedSystem = DateTime.Now;
