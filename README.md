@@ -74,19 +74,3 @@ The solution is organized into several projects, each with a specific responsibi
    ```sh
    dotnet run --project WebApplicationFindClosestShelter/WebApplicationFindClosestShelter.csproj
    ```
-
-### Configuration
-
-- Edit `WebApplicationFindClosestShelter/appsettings.json` for database connection and other settings.
-
-## Example Use Case
-
-A user opens a client app, shares their location, and receives a list of the 10 closest shelters, sorted by distance. They can view details, see reviews, and add their own feedback.
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-
-Specify your license here (e.g., MIT).
