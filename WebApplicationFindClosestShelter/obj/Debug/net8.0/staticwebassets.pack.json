@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\WebApplicationFindClosestShelter\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\WebApplicationFindClosestShelter\\wwwroot\\js\\app.js",
+      "PackagePath": "staticwebassets\\js\\app.js"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WebApplicationFindClosestShelter.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WebApplicationFindClosestShelter.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.WebApplicationFindClosestShelter.props",
+      "PackagePath": "build\\WebApplicationFindClosestShelter.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.WebApplicationFindClosestShelter.props",
+      "PackagePath": "buildMultiTargeting\\WebApplicationFindClosestShelter.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.WebApplicationFindClosestShelter.props",
+      "PackagePath": "buildTransitive\\WebApplicationFindClosestShelter.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

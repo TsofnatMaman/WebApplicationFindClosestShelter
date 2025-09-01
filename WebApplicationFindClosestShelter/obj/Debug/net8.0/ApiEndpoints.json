@@ -1,6 +1,26 @@
 [
   {
     "ContainingType": "WebApplicationFindClosestShelter.Controllers.AddressController",
+    "Method": "GetAllAsync",
+    "RelativePath": "api/Address",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Core.Models.AddressDTO, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApplicationFindClosestShelter.Controllers.AddressController",
     "Method": "AddAsync",
     "RelativePath": "api/Address",
     "HttpMethod": "POST",

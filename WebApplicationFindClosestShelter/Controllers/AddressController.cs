@@ -17,6 +17,12 @@ namespace WebApplicationFindClosestShelter.Controllers
             this.bllAddress = bllAddress;
         }
 
+        [HttpGet]
+        public async Task<List<AddressDTO>> GetAllAsync()
+        {
+            return await bllAddress.GetAllAsync();
+        }
+
         [HttpGet("Closest/{location}")]
         public async Task<List<AddressDTO>> GetClosestAsync(string location)
         {

@@ -1,12 +1,228 @@
 {
   "Version": 1,
-  "Hash": "nnQs5VlYjbpDbYWuW/CJ2gZB5Chlg6GOzfdUT7bkMdc=",
+  "Hash": "SBiQXZMXvhMPGznGoemy1r5qSD0wR/0Vg9bmkCGylas=",
   "Source": "WebApplicationFindClosestShelter",
   "BasePath": "_content/WebApplicationFindClosestShelter",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "WebApplicationFindClosestShelter\\wwwroot",
+      "Source": "WebApplicationFindClosestShelter",
+      "ContentRoot": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\WebApplicationFindClosestShelter\\wwwroot\\",
+      "BasePath": "_content/WebApplicationFindClosestShelter",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\WebApplicationFindClosestShelter\\wwwroot\\index.html",
+      "SourceId": "WebApplicationFindClosestShelter",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\WebApplicationFindClosestShelter\\wwwroot\\",
+      "BasePath": "_content/WebApplicationFindClosestShelter",
+      "RelativePath": "index#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3i3myk5ltf",
+      "Integrity": "O31raUdD/0Zi6AKyz6yZrc/y0C1mYDH+qNRy5dKI4XA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\WebApplicationFindClosestShelter\\wwwroot\\js\\app.js",
+      "SourceId": "WebApplicationFindClosestShelter",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\WebApplicationFindClosestShelter\\wwwroot\\",
+      "BasePath": "_content/WebApplicationFindClosestShelter",
+      "RelativePath": "js/app#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kf3evif4i3",
+      "Integrity": "IAADugeJP8SS3rQowNda1/uN7FM0VBG/bog2BcNEjLg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\app.js"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "index.3i3myk5ltf.html",
+      "AssetFile": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\WebApplicationFindClosestShelter\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10117"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"O31raUdD/0Zi6AKyz6yZrc/y0C1mYDH+qNRy5dKI4XA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 01 Sep 2025 20:17:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3i3myk5ltf"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-O31raUdD/0Zi6AKyz6yZrc/y0C1mYDH+qNRy5dKI4XA="
+        }
+      ]
+    },
+    {
+      "Route": "index.html",
+      "AssetFile": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\WebApplicationFindClosestShelter\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10117"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"O31raUdD/0Zi6AKyz6yZrc/y0C1mYDH+qNRy5dKI4XA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 01 Sep 2025 20:17:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-O31raUdD/0Zi6AKyz6yZrc/y0C1mYDH+qNRy5dKI4XA="
+        }
+      ]
+    },
+    {
+      "Route": "js/app.js",
+      "AssetFile": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\WebApplicationFindClosestShelter\\wwwroot\\js\\app.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3062"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IAADugeJP8SS3rQowNda1/uN7FM0VBG/bog2BcNEjLg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 25 Aug 2025 17:03:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-IAADugeJP8SS3rQowNda1/uN7FM0VBG/bog2BcNEjLg="
+        }
+      ]
+    },
+    {
+      "Route": "js/app.kf3evif4i3.js",
+      "AssetFile": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\WebApplicationFindClosestShelter\\wwwroot\\js\\app.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3062"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IAADugeJP8SS3rQowNda1/uN7FM0VBG/bog2BcNEjLg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 25 Aug 2025 17:03:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kf3evif4i3"
+        },
+        {
+          "Name": "label",
+          "Value": "js/app.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-IAADugeJP8SS3rQowNda1/uN7FM0VBG/bog2BcNEjLg="
+        }
+      ]
+    }
+  ]
 }
