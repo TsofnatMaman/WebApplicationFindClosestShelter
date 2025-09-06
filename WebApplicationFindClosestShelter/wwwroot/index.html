@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>מציאת המקלט הקרוב</title>
 
-    <!-- Leaflet מפה -->
-    <link rel="stylesheet"
-          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-          integrity=""
-          crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
     <style>
         :root {
             --bg: #0b1020;
@@ -35,7 +31,7 @@
 
         .app {
             display: grid;
-            grid-template-columns: 360px 1fr;
+            grid-template-columns: 380px 1fr;
             gap: 16px;
             height: 100vh;
             padding: 16px;
@@ -69,9 +65,14 @@
                     flex: 1
                 }
 
-        .search {
+        .row {
             display: flex;
-            gap: 8px
+            gap: 8px;
+            flex-wrap: wrap
+        }
+
+        .search {
+            padding: 12px 16px
         }
 
             .search input, .search select, .search button {
@@ -82,9 +83,32 @@
                 color: var(--text)
             }
 
+        .btn {
+            cursor: pointer
+        }
+
+            .btn.accent {
+                background: var(--accent);
+                border-color: var(--accent);
+                color: white
+            }
+
+            .btn.ok {
+                background: var(--ok);
+                border-color: var(--ok);
+                color: white
+            }
+
+            .btn.err {
+                background: var(--err);
+                border-color: var(--err);
+                color: white
+            }
+
         .list {
             overflow: auto;
-            padding: 8px 8px 16px 8px
+            padding: 8px 8px 16px 8px;
+            border-bottom: 1px solid var(--border)
         }
 
         .item {
@@ -111,44 +135,242 @@
             border-radius: 16px
         }
 
+        .section-title {
+            padding: 10px 16px;
+            border-bottom: 1px solid var(--border);
+            font-weight: 600;
+            color: #dce6ff
+        }
+
+        .opinions {
+            overflow: auto;
+            padding: 8px 8px 16px 8px
+        }
+
+        .op {
+            border: 1px dashed var(--border);
+            border-radius: 12px;
+            padding: 10px;
+            margin: 8px 4px;
+            background: #0f1731
+        }
+
+            .op .hdr {
+                display: flex;
+                justify-content: space-between;
+                gap: 8px
+            }
+
+        .muted {
+            color: var(--muted);
+            font-size: 12px
+        }
+
+        .inline {
+            display: inline-flex;
+            gap: 8px;
+            align-items: center
+        }
+
+        .mt8 {
+            margin-top: 8px
+        }
+
+        .hidden {
+            display: none
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.35);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            z-index: 9999
+        }
+
+            .modal.open {
+                display: flex
+            }
+
+            .modal .box {
+                width: min(680px,96vw);
+                background: #0f1731;
+                border: 1px solid var(--border);
+                border-radius: 16px;
+                padding: 16px
+            }
+
+        .box h2 {
+            margin: 0 0 10px 0
+        }
+
+        .box .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px
+        }
+
+        .box input, .box textarea, .box select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: #0e1530;
+            color: var(--text)
+        }
+
+        .box textarea {
+            min-height: 100px
+        }
+
+        .box .actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 12px
+        }
+
         @media(max-width:900px) {
             .app {
                 grid-template-columns: 1fr;
-                grid-template-rows: 360px 1fr
+                grid-template-rows: 380px 1fr
             }
         }
     </style>
 </head>
 <body>
     <div class="app">
+        <!-- Sidebar -->
         <div class="card panel">
             <header>
                 <h1>מציאת המקלט הקרוב</h1>
             </header>
-            <div class="search" style="padding:12px 16px;">
-                <input id="q" type="text" placeholder="חיפוש לפי שם/כתובת (אופציונלי)" />
-                <select id="type">
-                    <option value="">כל הסוגים</option>
-                    <option value="PUBLIC_SHELTER">PUBLIC_SHELTER</option>
-                    <option value="SHELTER">SHELTER</option>
-                    <option value="PROTECTED_PUBLIC_AREA">PROTECTED_PUBLIC_AREA</option>
-                    <option value="MMD">MMD</option>
-                    <option value="REINFORCED">REINFORCED</option>
-                    <option value="STAIRWELL">STAIRWELL</option>
-                </select>
-                <button id="locate">מצא סביבי</button>
+
+            <div class="search">
+                <div class="row">
+                    <input id="q" type="text" placeholder="חיפוש לפי שם/כתובת" />
+                    <select id="type">
+                        <option value="">כל הסוגים</option>
+                        <option value="PUBLIC_SHELTER">PUBLIC_SHELTER</option>
+                        <option value="SHELTER">SHELTER</option>
+                        <option value="PROTECTED_PUBLIC_AREA">PROTECTED_PUBLIC_AREA</option>
+                        <option value="MMD">MMD</option>
+                        <option value="REINFORCED">REINFORCED</option>
+                        <option value="STAIRWELL">STAIRWELL</option>
+                    </select>
+                </div>
+                <div class="row mt8">
+                    <button id="locate" class="btn accent">מצא סביבי</button>
+                    <button id="add-address-here" class="btn ok">הוסף כתובת מהמיקום שלי</button>
+                    <button id="open-add-address" class="btn">הוסף כתובת ידנית</button>
+                </div>
             </div>
+
+            <div class="section-title">תוצאות</div>
             <div class="list" id="results"></div>
+
+            <div class="section-title">חוות דעת לכתובת שנבחרה</div>
+            <div class="opinions" id="opinions">
+                <div class="muted">בחרי כתובת כדי לראות חוות דעת.</div>
+            </div>
         </div>
 
-        <div class="card">
-            <div id="map"></div>
+        <!-- Map -->
+        <div class="card"><div id="map"></div></div>
+    </div>
+
+    <!-- Modal: Add/Edit Opinion -->
+    <div id="modal-opinion" class="modal">
+        <div class="box">
+            <h2 id="op-modal-title">הוספת חוות דעת</h2>
+            <div class="grid">
+                <div>
+                    <label>דירוג (1–5)</label>
+                    <select id="op-rating">
+                        <option>5</option>
+                        <option>4</option>
+                        <option>3</option>
+                        <option>2</option>
+                        <option>1</option>
+                    </select>
+                </div>
+                <div>
+                    <label>שם (אופציונלי)</label>
+                    <input id="op-name" placeholder="שמך" />
+                </div>
+                <div class="grid" style="grid-column:1/-1;grid-template-columns:1fr 1fr;">
+                    <div>
+                        <label>קו״ר (lat)</label>
+                        <input id="op-lat" placeholder="lat" />
+                    </div>
+                    <div>
+                        <label>קו״א (lon)</label>
+                        <input id="op-lon" placeholder="lon" />
+                    </div>
+                </div>
+                <div style="grid-column:1/-1">
+                    <label>תוכן</label>
+                    <textarea id="op-text" placeholder="מה חווית?"></textarea>
+                </div>
+            </div>
+            <div class="inline mt8">
+                <input type="checkbox" id="op-use-geo" />
+                <label for="op-use-geo">צרפי את המיקום הנוכחי שלי אוטומטית</label>
+            </div>
+            <div class="actions">
+                <button id="op-cancel" class="btn">ביטול</button>
+                <button id="op-save" class="btn ok">שמירה</button>
+            </div>
         </div>
     </div>
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-            integrity=""
-            crossorigin=""></script>
+    <!-- Modal: Add Address -->
+    <div id="modal-address" class="modal">
+        <div class="box">
+            <h2>הוספת כתובת</h2>
+            <div class="grid">
+                <div>
+                    <label>שם</label>
+                    <input id="ad-name" placeholder="שם המקלט/המקום" />
+                </div>
+                <div>
+                    <label>קוד (אופציונלי)</label>
+                    <input id="ad-code" placeholder="מס׳ פנימי/מזהה" />
+                </div>
+                <div>
+                    <label>עיר</label>
+                    <input id="ad-city" />
+                </div>
+                <div>
+                    <label>רחוב</label>
+                    <input id="ad-street" />
+                </div>
+                <div>
+                    <label>lat</label>
+                    <input id="ad-lat" />
+                </div>
+                <div>
+                    <label>lon</label>
+                    <input id="ad-lon" />
+                </div>
+            </div>
+            <div class="inline mt8">
+                <input type="checkbox" id="ad-use-geo" />
+                <label for="ad-use-geo">השתמשי במיקום הנוכחי שלי</label>
+                <button id="ad-fill-geo" class="btn">מלא אוטומטית</button>
+            </div>
+            <div class="actions">
+                <button id="ad-cancel" class="btn">ביטול</button>
+                <button id="ad-save" class="btn ok">שמרי כתובת</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="js/app.js"></script>
 </body>
 </html>
