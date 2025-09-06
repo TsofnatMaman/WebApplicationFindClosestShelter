@@ -1,17 +1,22 @@
 ﻿<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>מציאת המקלט הקרוב</title>
+
+    <!-- Leaflet מפה -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity=""
+          crossorigin="" />
     <style>
         :root {
             --bg: #0b1020;
             --card: #111831;
-            --muted: #9bb3ff;
             --text: #e8eeff;
+            --muted: #9bb3ff;
             --accent: #3b82f6;
-            --accent2: #60a5fa;
             --ok: #10b981;
             --err: #ef4444;
             --border: #2a3760;
@@ -25,278 +30,125 @@
             margin: 0;
             background: linear-gradient(180deg,#0b1020 0%,#0f1731 100%);
             color: var(--text);
-            font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
+            font-family: system-ui,Segoe UI,Roboto,Arial
+        }
+
+        .app {
+            display: grid;
+            grid-template-columns: 360px 1fr;
+            gap: 16px;
+            height: 100vh;
+            padding: 16px;
+            box-sizing: border-box
         }
 
         .card {
-            width: min(980px,100%);
             background: linear-gradient(180deg,#111831 0%,#0e1530 100%);
             border: 1px solid var(--border);
             border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,.35);
             overflow: hidden
         }
 
-        header {
-            padding: 20px 24px;
+        .panel {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            border-bottom: 1px solid var(--border)
+            flex-direction: column;
+            height: 100%
         }
 
-        h1 {
-            font-size: 20px;
-            margin: 0
-        }
-
-        .muted {
-            color: var(--muted);
-            font-size: 13px
-        }
-
-        main {
-            padding: 20px 24px
-        }
-
-        .grid {
-            display: grid;
-            gap: 12px;
-            grid-template-columns: 1fr 1fr 1fr;
-            align-items: end
-        }
-
-            .grid .wide {
-                grid-column: 1/-1
+            .panel header {
+                padding: 16px 20px;
+                border-bottom: 1px solid var(--border);
+                display: flex;
+                gap: 8px;
+                align-items: center
             }
 
-        label {
-            display: block;
-            font-size: 13px;
-            color: var(--muted);
-            margin: 0 0 6px
+                .panel header h1 {
+                    font-size: 18px;
+                    margin: 0;
+                    flex: 1
+                }
+
+        .search {
+            display: flex;
+            gap: 8px
         }
 
-        input {
-            width: 100%;
-            padding: 10px 12px;
-            border-radius: 10px;
+            .search input, .search select, .search button {
+                padding: 10px;
+                border-radius: 10px;
+                border: 1px solid var(--border);
+                background: #0f1731;
+                color: var(--text)
+            }
+
+        .list {
+            overflow: auto;
+            padding: 8px 8px 16px 8px
+        }
+
+        .item {
             border: 1px solid var(--border);
-            background: #0b1229;
-            color: var(--text);
-            outline: none
+            border-radius: 12px;
+            padding: 10px;
+            margin: 8px 4px;
+            background: #0f1731
         }
 
-            input::placeholder {
-                color: #6d7bb6
+            .item h3 {
+                margin: 0 0 6px 0;
+                font-size: 16px
             }
 
-        .actions {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap
+        .pill {
+            font-size: 12px;
+            color: var(--muted)
         }
 
-        button {
-            cursor: pointer;
-            border: 1px solid var(--border);
-            background: #0c1430;
-            color: var(--text);
-            padding: 10px 14px;
-            border-radius: 10px;
-            font-weight: 600
+        #map {
+            height: 100%;
+            min-height: 400px;
+            border-radius: 16px
         }
 
-            button.primary {
-                background: linear-gradient(90deg,var(--accent),var(--accent2));
-                border-color: transparent;
-                color: white;
-                box-shadow: 0 8px 20px rgba(59,130,246,.35)
-            }
-
-        .status {
-            margin-top: 12px;
-            font-size: 13px
-        }
-
-            .status.ok {
-                color: var(--ok)
-            }
-
-            .status.err {
-                color: var(--err)
-            }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 16px;
-            border: 1px solid var(--border)
-        }
-
-        th, td {
-            padding: 10px 12px;
-            border-bottom: 1px solid var(--border);
-            text-align: right
-        }
-
-        th {
-            color: var(--muted);
-            font-weight: 600;
-            background: #0c1430
-        }
-
-        .empty {
-            margin-top: 16px;
-            padding: 14px 12px;
-            border: 1px dashed var(--border);
-            border-radius: 10px;
-            color: var(--muted);
-            background: #0b1229
-        }
-
-        footer {
-            padding: 16px 24px;
-            border-top: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            color: var(--muted);
-            font-size: 12px
-        }
-
-        @media (max-width:820px) {
-            .grid {
-                grid-template-columns: 1fr
+        @media(max-width:900px) {
+            .app {
+                grid-template-columns: 1fr;
+                grid-template-rows: 360px 1fr
             }
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <header>
-            <div>
+    <div class="app">
+        <div class="card panel">
+            <header>
                 <h1>מציאת המקלט הקרוב</h1>
-                <div class="muted">API: ‎/api/Address/Closest/{lat,lon}</div>
+            </header>
+            <div class="search" style="padding:12px 16px;">
+                <input id="q" type="text" placeholder="חיפוש לפי שם/כתובת (אופציונלי)" />
+                <select id="type">
+                    <option value="">כל הסוגים</option>
+                    <option value="PUBLIC_SHELTER">PUBLIC_SHELTER</option>
+                    <option value="SHELTER">SHELTER</option>
+                    <option value="PROTECTED_PUBLIC_AREA">PROTECTED_PUBLIC_AREA</option>
+                    <option value="MMD">MMD</option>
+                    <option value="REINFORCED">REINFORCED</option>
+                    <option value="STAIRWELL">STAIRWELL</option>
+                </select>
+                <button id="locate">מצא סביבי</button>
             </div>
-            <div class="muted" id="originInfo"></div>
-        </header>
+            <div class="list" id="results"></div>
+        </div>
 
-        <main>
-            <div class="grid">
-                <div>
-                    <label for="lat">קו רוחב (Latitude)</label>
-                    <input id="lat" type="number" inputmode="decimal" step="any" placeholder="לדוגמה: 32.0853">
-                </div>
-                <div>
-                    <label for="lon">קו אורך (Longitude)</label>
-                    <input id="lon" type="number" inputmode="decimal" step="any" placeholder="לדוגמה: 34.7818">
-                </div>
-                <div class="actions">
-                    <button id="geo">השתמש במיקומי</button>
-                    <button class="primary" id="find">מצא את המקלט הקרוב</button>
-                    <button id="clear">נקה</button>
-                </div>
-                <div class="wide status" id="status"></div>
-            </div>
-
-            <div id="results"></div>
-        </main>
-
-        <footer>
-            <span>מוגש מאותו שרת → אין CORS.</span>
-            <span>© FindClosestShelter</span>
-        </footer>
+        <div class="card">
+            <div id="map"></div>
+        </div>
     </div>
 
-    <script>
-        const $ = (s) => document.querySelector(s);
-        const $$ = (s) => Array.from(document.querySelectorAll(s));
-
-        function showStatus(msg, kind = '') { const el = $('#status'); el.className = `wide status ${kind}`; el.textContent = msg || ''; }
-
-        // מציג לפי: shelter.nameStr, location, distance (מטרים→ק״מ), code (ID)
-        function renderResults(data) {
-            const wrap = $('#results');
-            const items = Array.isArray(data) ? data : (data ? [data] : []);
-            if (!items.length) { wrap.innerHTML = `<div class="empty">לא נמצאו תוצאות</div>`; return; }
-
-            const rows = items.map((it, i) => {
-                const id = it.code ?? '—';
-                const name = it.shelter?.nameStr ?? '—';
-                const address = it.location ?? '—';
-                const distMeters = Number(it.distance);
-                const km = isNaN(distMeters) ? '—' : (distMeters / 1000).toFixed(2) + ' ק״מ';
-
-                return `<tr>
-              <td>${i + 1}</td>
-              <td>${name}</td>
-              <td>${address}</td>
-              <td>${km}</td>
-              <td>${id}</td>
-            </tr>`;
-            }).join('');
-
-            wrap.innerHTML = `
-            <table>
-              <thead><tr><th>#</th><th>שם</th><th>כתובת</th><th>מרחק</th><th>ID</th></tr></thead>
-              <tbody>${rows}</tbody>
-            </table>`;
-        }
-
-        async function fetchClosest(lat, lon) {
-            // העמוד מוגש מאותו origin (יש UseStaticFiles ב-Program.cs) → נתיב יחסי
-            const url = `/api/Address/Closest/${encodeURIComponent(lat)},${encodeURIComponent(lon)}`;
-            const res = await fetch(url);
-            if (!res.ok) {
-                const txt = await res.text().catch(() => '');
-                throw new Error(`${res.status} ${txt}`);
-            }
-            return res.json();
-        }
-
-        async function onFind() {
-            const lat = parseFloat($('#lat').value);
-            const lon = parseFloat($('#lon').value);
-            if (Number.isNaN(lat) || Number.isNaN(lon)) {
-                showStatus('נא להזין קווי רוחב/אורך חוקיים'); return;
-            }
-            try {
-                $('#find').disabled = true;
-                showStatus('מחפש מקלטים קרובים…');
-                const data = await fetchClosest(lat, lon);
-                renderResults(data);
-                showStatus('בוצע בהצלחה', 'ok');
-            } catch (err) {
-                console.error(err);
-                showStatus('שגיאה: ' + (err?.message || err), 'err');
-                $('#results').innerHTML = `<div class="empty">אין תוצאות. ודא שהשרת פועל ושהנתיב נכון.</div>`;
-            } finally {
-                $('#find').disabled = false;
-            }
-        }
-
-        function onClear() { $('#lat').value = ''; $('#lon').value = ''; showStatus(''); $('#results').innerHTML = ''; }
-        function onGeo() {
-            if (!navigator.geolocation) { showStatus('הדפדפן לא תומך Geolocation'); return; }
-            showStatus('מבקש מיקום…');
-            navigator.geolocation.getCurrentPosition(pos => {
-                $('#lat').value = pos.coords.latitude.toFixed(6);
-                $('#lon').value = pos.coords.longitude.toFixed(6);
-                showStatus('מיקום נטען. לחצו "מצא את המקלט הקרוב".', 'ok');
-            }, err => showStatus('לא ניתן לקבל מיקום: ' + (err?.message || 'שגיאה'), 'err'),
-                { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 });
-        }
-
-        $('#find').addEventListener('click', onFind);
-        $('#clear').addEventListener('click', onClear);
-        $('#geo').addEventListener('click', onGeo);
-        $$('#lat,#lon').forEach(i => i.addEventListener('keydown', e => (e.key === 'Enter') && onFind()));
-        document.getElementById('originInfo').textContent = window.location.origin;
-    </script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity=""
+            crossorigin=""></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

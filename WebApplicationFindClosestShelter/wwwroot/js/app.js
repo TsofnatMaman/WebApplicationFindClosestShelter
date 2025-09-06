@@ -1,89 +1,102 @@
-﻿let map;
-let shelters = [];
-let selectedLocation = null;
+﻿// בסיס ל־API (אותו דומיין)
+const API = "/api";
 
-async function initMap() {
-    map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: 31.0461, lng: 34.8516 },
-        zoom: 8,
+// מפה
+let map = L.map("map", { zoomControl: true }).setView([31.778, 35.235], 12);
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "&copy; OpenStreetMap",
+}).addTo(map);
+
+let markersLayer = L.layerGroup().addTo(map);
+const $ = (s) => document.querySelector(s);
+const resultsEl = $("#results");
+
+// עוזר: יצירת URL ל-Closest מה-API: api/Address/Closest/{lon,lat}
+function closestUrl(lon, lat) {
+    return `${API}/Address/Closest/${lon},${lat}`;
+}
+
+// רינדור כרטיס
+function renderItem(addr) {
+    // addr.Location הוא מחרוזת "lon,lat" לפי ה-Mapper
+    const [lon, lat] = addr.location.split(",").map(Number);
+    const name = addr.shelter?.nameStr || addr.shelter?.name || "Shelter";
+    return `
+    <div class="item" data-lon="${lon}" data-lat="${lat}">
+      <h3>${name} <span class="pill">#${addr.code}</span></h3>
+      <div class="pill">Capacity: ${addr.capacity ?? "—"} | Open 24/7: ${addr.isOpen24_7 ? "כן" : "לא"}</div>
+      <div class="pill">Contact: ${addr.contactPersonName ?? "—"} ${addr.contactPersonPhone ?? ""}</div>
+    </div>`;
+}
+
+// הצגה במפה וברשימה
+function showAddresses(list) {
+    markersLayer.clearLayers();
+    resultsEl.innerHTML = list.map(renderItem).join("");
+
+    list.forEach((addr) => {
+        const [lon, lat] = addr.location.split(",").map(Number);
+        const title = addr.shelter?.nameStr || addr.shelter?.name || "Shelter";
+        const m = L.marker([lat, lon]).addTo(markersLayer);
+        m.bindPopup(`<b>${title}</b><br/>#${addr.code}`);
     });
 
-    map.addListener("click", (e) => openForm(e.latLng));
+    // זום לכל הסמנים
+    let latlngs = list.map((a) => {
+        const [lon, lat] = a.location.split(",").map(Number);
+        return [lat, lon];
+    });
+    if (latlngs.length) map.fitBounds(latlngs, { padding: [20, 20] });
 
-    await loadShelters();
-    await loadAddresses();
-}
-
-async function loadShelters() {
-    const res = await fetch("/api/Shelter");
-    shelters = await res.json();
-    const select = document.getElementById("shelterSelect");
-    shelters.forEach(s => {
-        const opt = document.createElement("option");
-        opt.value = s.code;
-        opt.textContent = s.nameStr;
-        select.appendChild(opt);
+    // קליק על פריט ברשימה → פוקוס במפה
+    document.querySelectorAll(".item").forEach((div) => {
+        div.addEventListener("click", () => {
+            const lat = parseFloat(div.dataset.lat);
+            const lon = parseFloat(div.dataset.lon);
+            map.setView([lat, lon], 16, { animate: true });
+        });
     });
 }
 
-async function loadAddresses() {
-    const res = await fetch("/api/Address");
-    const addresses = await res.json();
-    addresses.forEach(addAddressMarker);
+// שליפת נתונים ליד המיקום הנוכחי
+async function loadNearMe() {
+    try {
+        const pos = await new Promise((resolve, reject) =>
+            navigator.geolocation
+                ? navigator.geolocation.getCurrentPosition(resolve, reject, { enableHighAccuracy: true, timeout: 8000 })
+                : reject(new Error("No geolocation"))
+        );
+
+        const lat = pos.coords.latitude.toFixed(6);
+        const lon = pos.coords.longitude.toFixed(6);
+
+        const res = await fetch(closestUrl(lon, lat));
+        if (!res.ok) throw new Error(await res.text());
+        const list = await res.json();
+
+        // סינון קל לפי select (אם יש)
+        const type = $("#type").value;
+        const q = $("#q").value.trim();
+        const filtered = list.filter((a) => {
+            const name = (a.shelter?.nameStr || a.shelter?.name || "").toUpperCase();
+            const typeOk = !type || name === type;
+            const textOk = !q || (name.includes(q.toUpperCase()));
+            return typeOk && textOk;
+        });
+
+        showAddresses(filtered);
+    } catch (e) {
+        resultsEl.innerHTML = `<div class="item"><div class="pill" style="color:var(--err)">שגיאה: ${e.message}</div></div>`;
+    }
 }
 
-function addAddressMarker(address) {
-    if (!address.location) return;
-    const parts = address.location.split(",").map(Number);
-    const marker = new google.maps.Marker({
-        position: { lng: parts[0], lat: parts[1] },
-        map,
-        title: address.shelter?.nameStr || "Shelter"
-    });
-
-    const info = new google.maps.InfoWindow({
-        content: `<div><strong>${address.shelter?.nameStr || ""}</strong><br/>Capacity: ${address.capacity}<br/>Contact: ${address.contactPersonName}</div>`
-    });
-
-    marker.addListener("mouseover", () => info.open(map, marker));
-    marker.addListener("mouseout", () => info.close());
-}
-
-function openForm(latLng) {
-    selectedLocation = latLng;
-    document.getElementById("address-form").reset();
-    document.getElementById("form-container").classList.remove("hidden");
-}
-
-document.getElementById("cancelBtn").addEventListener("click", () => {
-    document.getElementById("form-container").classList.add("hidden");
+$("#locate").addEventListener("click", loadNearMe);
+$("#type").addEventListener("change", loadNearMe);
+$("#q").addEventListener("input", () => {
+    // דילי קטן כדי לא להציף קריאות
+    clearTimeout(window.__qTimer);
+    window.__qTimer = setTimeout(loadNearMe, 300);
 });
 
-document.getElementById("address-form").addEventListener("submit", async (e) => {
-    e.preventDefault();
-    if (!selectedLocation) return;
-
-    const payload = {
-        location: `${selectedLocation.lng()},${selectedLocation.lat()}`,
-        shelter: { code: parseInt(document.getElementById("shelterSelect").value) },
-        contactPersonName: document.getElementById("contactName").value,
-        contactPersonPhone: document.getElementById("contactPhone").value,
-        capacity: parseInt(document.getElementById("capacity").value) || 0,
-        currentNumberPeople: parseInt(document.getElementById("currentPeople").value) || 0,
-        isOpen24_7: document.getElementById("isOpen").checked,
-        contactPersonHasSMS: document.getElementById("sms").checked
-    };
-
-    await fetch("/api/Address", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-    });
-
-    addAddressMarker({
-        ...payload,
-        shelter: shelters.find(s => s.code === payload.shelter.code)
-    });
-
-    document.getElementById("form-container").classList.add("hidden");
-});
+// טעינה ראשונית (אם אין גיאולוקציה, נשארים בזום ברירת מחדל)
+loadNearMe().catch(() => { });

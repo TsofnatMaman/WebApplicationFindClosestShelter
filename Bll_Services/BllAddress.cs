@@ -62,5 +62,10 @@ namespace Bll_Services
         {
             await _dalAddress.UpdateAsync(_mapper.Map<Address>(address));
         }
+
+        public async Task<List<AddressDTO>> GetAllAsync()
+        {
+            return _mapper.Map<List<AddressDTO>>(await _dalAddress.GetAllAsync());
+        }
     }
 }
