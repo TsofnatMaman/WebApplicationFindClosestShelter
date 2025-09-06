@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>מציאת המקלט הקרוב</title>
 
+    <!-- אם את רוצה לבטל 404 של favicon, אפשר לשים קובץ קטן בשם favicon.ico ב-wwwroot,
+         או פשוט להשאיר את זה וזה לא מזיק. -->
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
     <style>
         :root {
@@ -232,6 +235,31 @@
             justify-content: flex-end;
             gap: 10px;
             margin-top: 12px
+        }
+
+        /* My location marker */
+        .me-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 999px;
+            background: #8b5cf6;
+            border: 2px solid white;
+            box-shadow: 0 0 0 0 rgba(139,92,246,.7);
+            animation: pulse 2s infinite
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(139,92,246,.7)
+            }
+
+            70% {
+                box-shadow: 0 0 0 16px rgba(139,92,246,0)
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(139,92,246,0)
+            }
         }
 
         @media(max-width:900px) {

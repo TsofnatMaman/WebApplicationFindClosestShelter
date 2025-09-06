@@ -1,19 +1,52 @@
 ﻿const API = "/api";
 
-// ===== Map =====
+/* ===================== Map ===================== */
 let map = L.map("map", { zoomControl: true }).setView([31.778, 35.235], 12);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: "&copy; OpenStreetMap"
 }).addTo(map);
 let markersLayer = L.layerGroup().addTo(map);
 
-// ===== DOM helpers =====
+/* ---- My location marker (purple pulsing) ---- */
+let myMarker = null;
+let myAccuracy = null;
+const myIcon = L.divIcon({ className: "me-dot" });
+
+function showMyLocation(lat, lon, accuracyMeters) {
+    if (!myMarker) {
+        myMarker = L.marker([lat, lon], { icon: myIcon, interactive: false }).addTo(map);
+    } else {
+        myMarker.setLatLng([lat, lon]);
+    }
+    if (accuracyMeters) {
+        if (!myAccuracy) {
+            myAccuracy = L.circle([lat, lon], { radius: accuracyMeters, opacity: 0.25, fillOpacity: 0.07 }).addTo(map);
+        } else {
+            myAccuracy.setLatLng([lat, lon]); myAccuracy.setRadius(accuracyMeters);
+        }
+    }
+}
+
+if (navigator.geolocation) {
+    navigator.geolocation.watchPosition(
+        (p) => {
+            const lat = +p.coords.latitude.toFixed(6);
+            const lon = +p.coords.longitude.toFixed(6);
+            showMyLocation(lat, lon, p.coords.accuracy || null);
+        },
+        (err) => console.debug("geo watch error:", err),
+        { enableHighAccuracy: true, maximumAge: 5000, timeout: 8000 }
+    );
+}
+
+/* ===================== DOM helpers & state ===================== */
 const $ = (s) => document.querySelector(s);
 const resultsEl = $("#results");
 const opinionsEl = $("#opinions");
-let selectedAddress = null; // האובייקט שנבחר
+let selectedAddress = null;
+let currentResults = [];   // <<< מוצהר פעם אחת בלבד!
 
-// ===== Utils =====
+/* ===================== Utils ===================== */
 async function geolocate() {
     return await new Promise((resolve, reject) =>
         navigator.geolocation
@@ -28,11 +61,11 @@ async function geolocate() {
 function lonlatToStr({ lon, lat }) { return `${lon},${lat}`; }
 function closestUrl(lon, lat) { return `${API}/Address/Closest/${lon},${lat}`; }
 
-// ===== Render results & markers =====
+/* ===================== Render results & markers ===================== */
 function renderItem(addr) {
     const [lon, lat] = addr.location.split(",").map(Number);
     const name = addr.shelter?.nameStr || addr.shelter?.name || "Shelter";
-    const isSelected = selectedAddress && selectedAddress.code === addr.code;
+    const isSelected = selectedAddress && String(selectedAddress.code) === String(addr.code);
     return `
     <div class="item ${isSelected ? "selected" : ""}" data-code="${addr.code}" data-lon="${lon}" data-lat="${lat}">
       <h3>${name} <span class="pill">#${addr.code}</span></h3>
@@ -44,6 +77,7 @@ function renderItem(addr) {
       </div>
     </div>`;
 }
+
 function showAddresses(list) {
     markersLayer.clearLayers();
     resultsEl.innerHTML = list.map(renderItem).join("");
@@ -51,17 +85,18 @@ function showAddresses(list) {
     list.forEach((addr) => {
         const [lon, lat] = addr.location.split(",").map(Number);
         const title = addr.shelter?.nameStr || addr.shelter?.name || "Shelter";
-        const m = L.marker([lat, lon]).addTo(markersLayer);
-        m.bindPopup(`<b>${title}</b><br/>#${addr.code}`);
+        L.marker([lat, lon]).addTo(markersLayer).bindPopup(`<b>${title}</b><br/>#${addr.code}`);
     });
 
-    let latlngs = list.map((a) => { const [lon, lat] = a.location.split(",").map(Number); return [lat, lon]; });
+    const latlngs = list.map((a) => {
+        const [lon, lat] = a.location.split(",").map(Number);
+        return [lat, lon];
+    });
     if (latlngs.length) map.fitBounds(latlngs, { padding: [20, 20] });
 
-    // Select events
+    // select item
     document.querySelectorAll(".item").forEach((div) => {
         div.addEventListener("click", (e) => {
-            // אל תלחצי כשזה כפתור פנימי
             if (e.target.closest("button")) return;
             const lat = parseFloat(div.dataset.lat);
             const lon = parseFloat(div.dataset.lon);
@@ -70,22 +105,21 @@ function showAddresses(list) {
             selectedAddress = currentResults.find((x) => String(x.code) === String(code));
             renderOpinionsPlaceholder();
             loadOpinions(code).catch(() => { });
-            resultsEl.querySelectorAll(".item").forEach(x => x.classList.remove("selected"));
+            resultsEl.querySelectorAll(".item").forEach((x) => x.classList.remove("selected"));
             div.classList.add("selected");
         });
     });
 
-    // Opinion buttons
-    document.querySelectorAll(".btn-op-add").forEach(btn =>
+    // opinion buttons
+    document.querySelectorAll(".btn-op-add").forEach((btn) =>
         btn.addEventListener("click", (e) => {
             e.stopPropagation();
             const code = btn.dataset.code;
-            const addr = currentResults.find((x) => String(x.code) === String(code));
-            selectedAddress = addr;
-            openOpinionModal(); // add-mode
+            selectedAddress = currentResults.find((x) => String(x.code) === String(code));
+            openOpinionModal(); // add
         })
     );
-    document.querySelectorAll(".btn-op-refresh").forEach(btn =>
+    document.querySelectorAll(".btn-op-refresh").forEach((btn) =>
         btn.addEventListener("click", (e) => {
             e.stopPropagation();
             loadOpinions(btn.dataset.code);
@@ -93,6 +127,7 @@ function showAddresses(list) {
     );
 }
 
+/* ===================== Opinions UI ===================== */
 function renderOpinionsPlaceholder() {
     if (!selectedAddress) {
         opinionsEl.innerHTML = `<div class="muted">בחרי כתובת כדי לראות חוות דעת.</div>`;
@@ -114,7 +149,7 @@ function renderOpinions(list) {
         $("#opinions-list").innerHTML = `<div class="muted">אין חוות דעת עדיין.</div>`;
         return;
     }
-    $("#opinions-list").innerHTML = list.map(o => `
+    $("#opinions-list").innerHTML = list.map((o) => `
     <div class="op" data-id="${o.id}">
       <div class="hdr">
         <div><b>דירוג:</b> ${o.rating ?? "—"} ★</div>
@@ -129,12 +164,11 @@ function renderOpinions(list) {
     </div>
   `).join("");
 
-    // Bind edit/delete
-    $("#opinions-list").querySelectorAll(".op").forEach(el => {
+    $("#opinions-list").querySelectorAll(".op").forEach((el) => {
         const id = el.dataset.id;
-        el.querySelector('[data-action="edit"]').addEventListener("click", async () => {
-            const o = opinionsCache.find(x => String(x.id) === String(id));
-            openOpinionModal(o); // edit mode
+        el.querySelector('[data-action="edit"]').addEventListener("click", () => {
+            const o = opinionsCache.find((x) => String(x.id) === String(id));
+            openOpinionModal(o);
         });
         el.querySelector('[data-action="delete"]').addEventListener("click", async () => {
             if (!confirm("למחוק חוות דעת?")) return;
@@ -144,18 +178,19 @@ function renderOpinions(list) {
     });
 }
 
-// ===== Data calls =====
-let currentResults = [];
+/* ===================== Data calls ===================== */
 async function loadNearMe() {
     try {
         const { lat, lon } = await geolocate();
+        showMyLocation(lat, lon, 30);
+        // בקשת הכתובות הקרובות
         const res = await fetch(closestUrl(lon, lat));
         if (!res.ok) throw new Error(await res.text());
         const list = await res.json();
 
         const type = $("#type").value;
         const q = $("#q").value.trim().toUpperCase();
-        const filtered = list.filter(a => {
+        const filtered = list.filter((a) => {
             const name = (a.shelter?.nameStr || a.shelter?.name || "").toUpperCase();
             const typeOk = !type || name === type;
             const textOk = !q || name.includes(q);
@@ -164,20 +199,21 @@ async function loadNearMe() {
 
         currentResults = filtered;
         showAddresses(filtered);
+        if (filtered.length === 0) map.setView([lat, lon], 15, { animate: true });
     } catch (e) {
         resultsEl.innerHTML = `<div class="item"><div class="pill" style="color:var(--err)">שגיאה: ${e.message}</div></div>`;
     }
 }
 
-// Opinions endpoints (מניח: קיימים בשרת)
+/* ---- Opinions endpoints ---- */
+let opinionsCache = [];
+
 async function getOpinions(addressCode) {
-    // GET api/Opinion/byAddress?addressCode=123
     const res = await fetch(`${API}/Opinion/byAddress?addressCode=${encodeURIComponent(addressCode)}`);
     if (!res.ok) throw new Error(await res.text());
     return await res.json();
 }
 async function postOpinion(body) {
-    // POST api/Opinion
     const res = await fetch(`${API}/Opinion`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -187,7 +223,6 @@ async function postOpinion(body) {
     return await res.json();
 }
 async function putOpinion(id, body) {
-    // PUT api/Opinion/{id}
     const res = await fetch(`${API}/Opinion/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -197,12 +232,10 @@ async function putOpinion(id, body) {
     return await res.json();
 }
 async function deleteOpinion(id) {
-    // DELETE api/Opinion/{id}
     const res = await fetch(`${API}/Opinion/${id}`, { method: "DELETE" });
     if (!res.ok) throw new Error(await res.text());
 }
 
-let opinionsCache = [];
 async function loadOpinions(addressCode) {
     try {
         renderOpinionsPlaceholder();
@@ -213,9 +246,9 @@ async function loadOpinions(addressCode) {
     }
 }
 
-// ===== Opinion modal =====
+/* ===================== Opinion Modal ===================== */
 const modalOpinion = $("#modal-opinion");
-let editingOpinion = null; // אם null → הוספה
+let editingOpinion = null;
 
 function openOpinionModal(op = null) {
     editingOpinion = op;
@@ -263,8 +296,9 @@ $("#op-save").addEventListener("click", async () => {
     }
 });
 
-// ===== Add Address modal/actions =====
+/* ===================== Add Address Modal ===================== */
 const modalAddress = $("#modal-address");
+
 function openAddressModal() {
     $("#ad-name").value = "";
     $("#ad-code").value = "";
@@ -275,6 +309,7 @@ function openAddressModal() {
     $("#ad-use-geo").checked = false;
     modalAddress.classList.add("open");
 }
+
 $("#open-add-address").addEventListener("click", openAddressModal);
 $("#ad-cancel").addEventListener("click", () => modalAddress.classList.remove("open"));
 $("#ad-fill-geo").addEventListener("click", async () => {
@@ -284,9 +319,9 @@ $("#ad-fill-geo").addEventListener("click", async () => {
         $("#ad-use-geo").checked = true;
     } catch (e) { alert("לא הצלחתי לקרוא מיקום: " + e.message); }
 });
+
 $("#ad-save").addEventListener("click", async () => {
     try {
-        // אם מסומן "השתמש במיקום" – נמלא אוטומטית
         if ($("#ad-use-geo").checked && (!$("#ad-lat").value || !$("#ad-lon").value)) {
             const g = await geolocate();
             $("#ad-lat").value = g.lat; $("#ad-lon").value = g.lon;
@@ -300,12 +335,10 @@ $("#ad-save").addEventListener("click", async () => {
         };
         await addAddress(body);
         modalAddress.classList.remove("open");
-        // רענון תוצאות סביבי לנוחות
         await loadNearMe();
     } catch (e) { alert("שגיאה בשמירת כתובת: " + e.message); }
 });
 
-// קיצור: הוספת כתובת לפי המיקום שלי בלחיצה אחת
 $("#add-address-here").addEventListener("click", async () => {
     try {
         const g = await geolocate();
@@ -315,10 +348,8 @@ $("#add-address-here").addEventListener("click", async () => {
     } catch (e) { alert("לא הצלחתי לקרוא מיקום: " + e.message); }
 });
 
-// ===== Address endpoints (נדרש בשרת) =====
+/* ---- Address endpoints ---- */
 async function addAddress(body) {
-    // POST api/Address
-    // body: { name, code?, city?, street?, location: "lon,lat" }
     const res = await fetch(`${API}/Address`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -328,7 +359,7 @@ async function addAddress(body) {
     return await res.json();
 }
 
-// ===== Filters & initial load =====
+/* ===================== Filters & initial load ===================== */
 $("#locate").addEventListener("click", loadNearMe);
 $("#type").addEventListener("change", loadNearMe);
 $("#q").addEventListener("input", () => {

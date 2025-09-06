@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebApplicationFindClosestShelter")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e664bfdbb1f198c48e99a91a70fc9c429f36d4f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0d721f55df09cb26d37355aac98d1347d7efd986")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebApplicationFindClosestShelter")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebApplicationFindClosestShelter")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

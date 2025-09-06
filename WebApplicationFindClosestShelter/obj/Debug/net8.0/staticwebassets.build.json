@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "oLNlaIEGSyOCwv04u1CWC+pgfEaqRcsj0gV+ODk5Ik8=",
+  "Hash": "t08FRVHMSNAgDPEBBu/LGfAB15zQB2SzYN2J1xMCGTg=",
   "Source": "WebApplicationFindClosestShelter",
   "BasePath": "_content/WebApplicationFindClosestShelter",
   "Mode": "Default",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "04huua9z6n",
-      "Integrity": "4LcyMJSC317yg9w87A9hmS8CDOFmW71O3+7QcoTOkyY=",
+      "Fingerprint": "bwd30zrdiw",
+      "Integrity": "G8WYdzXeAsxne9H4tZmGOMJ48TRf6yEFABZ/d+u/oDM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "afigbjqvbq",
-      "Integrity": "Rjgk40GH2zh5rO2LIxRZZ52pPUU1aSZGKUHApnn83ag=",
+      "Fingerprint": "98yyoyoae4",
+      "Integrity": "ycEPJL93nFpqAMXbvv0WKHi6aIX7p+qyexwx216/qLM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\app.js"
@@ -61,7 +61,7 @@
   ],
   "Endpoints": [
     {
-      "Route": "index.04huua9z6n.html",
+      "Route": "index.bwd30zrdiw.html",
       "AssetFile": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\WebApplicationFindClosestShelter\\wwwroot\\index.html",
       "Selectors": [],
       "ResponseHeaders": [
@@ -71,7 +71,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "11503"
+          "Value": "12340"
         },
         {
           "Name": "Content-Type",
@@ -79,11 +79,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"4LcyMJSC317yg9w87A9hmS8CDOFmW71O3+7QcoTOkyY=\""
+          "Value": "\"G8WYdzXeAsxne9H4tZmGOMJ48TRf6yEFABZ/d+u/oDM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 06 Sep 2025 21:53:38 GMT"
+          "Value": "Sat, 06 Sep 2025 22:06:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -93,7 +93,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "04huua9z6n"
+          "Value": "bwd30zrdiw"
         },
         {
           "Name": "label",
@@ -101,7 +101,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-4LcyMJSC317yg9w87A9hmS8CDOFmW71O3+7QcoTOkyY="
+          "Value": "sha256-G8WYdzXeAsxne9H4tZmGOMJ48TRf6yEFABZ/d+u/oDM="
         }
       ]
     },
@@ -116,7 +116,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "11503"
+          "Value": "12340"
         },
         {
           "Name": "Content-Type",
@@ -124,11 +124,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"4LcyMJSC317yg9w87A9hmS8CDOFmW71O3+7QcoTOkyY=\""
+          "Value": "\"G8WYdzXeAsxne9H4tZmGOMJ48TRf6yEFABZ/d+u/oDM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 06 Sep 2025 21:53:38 GMT"
+          "Value": "Sat, 06 Sep 2025 22:06:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -138,12 +138,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-4LcyMJSC317yg9w87A9hmS8CDOFmW71O3+7QcoTOkyY="
+          "Value": "sha256-G8WYdzXeAsxne9H4tZmGOMJ48TRf6yEFABZ/d+u/oDM="
         }
       ]
     },
     {
-      "Route": "js/app.afigbjqvbq.js",
+      "Route": "js/app.98yyoyoae4.js",
       "AssetFile": "C:\\Users\\tsofn\\Desktop\\Tsufit\\programming\\secondYear\\C#\\semesterB\\WebApplicationFindClosestShelter\\WebApplicationFindClosestShelter\\wwwroot\\js\\app.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -153,7 +153,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "13644"
+          "Value": "14652"
         },
         {
           "Name": "Content-Type",
@@ -161,11 +161,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Rjgk40GH2zh5rO2LIxRZZ52pPUU1aSZGKUHApnn83ag=\""
+          "Value": "\"ycEPJL93nFpqAMXbvv0WKHi6aIX7p+qyexwx216/qLM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 06 Sep 2025 21:53:34 GMT"
+          "Value": "Sat, 06 Sep 2025 22:07:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -175,7 +175,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "afigbjqvbq"
+          "Value": "98yyoyoae4"
         },
         {
           "Name": "label",
@@ -183,7 +183,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Rjgk40GH2zh5rO2LIxRZZ52pPUU1aSZGKUHApnn83ag="
+          "Value": "sha256-ycEPJL93nFpqAMXbvv0WKHi6aIX7p+qyexwx216/qLM="
         }
       ]
     },
@@ -198,7 +198,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "13644"
+          "Value": "14652"
         },
         {
           "Name": "Content-Type",
@@ -206,11 +206,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Rjgk40GH2zh5rO2LIxRZZ52pPUU1aSZGKUHApnn83ag=\""
+          "Value": "\"ycEPJL93nFpqAMXbvv0WKHi6aIX7p+qyexwx216/qLM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 06 Sep 2025 21:53:34 GMT"
+          "Value": "Sat, 06 Sep 2025 22:07:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -220,7 +220,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Rjgk40GH2zh5rO2LIxRZZ52pPUU1aSZGKUHApnn83ag="
+          "Value": "sha256-ycEPJL93nFpqAMXbvv0WKHi6aIX7p+qyexwx216/qLM="
         }
       ]
     }
